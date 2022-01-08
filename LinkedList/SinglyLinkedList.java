@@ -24,6 +24,23 @@ public class SinglyLinkedList {
         temp.next = headNode;
         headNode = temp;
     }
+    
+    public void printLinkedList() {
+        /* 
+        
+        1. Store headNode in a temp variable
+        2. Traverse temp node till temp.next is null
+        3. Print the values encountered temp.data value for every traversal 
+
+        */
+
+        Node temp = headNode;
+
+        while(temp.next != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
 
     public static void main(String[] args) {
 
