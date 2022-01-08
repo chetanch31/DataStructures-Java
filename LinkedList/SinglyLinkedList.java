@@ -25,14 +25,11 @@ public class SinglyLinkedList {
         headNode = temp;
     }
     
-    public void printLinkedList() {
-        /* 
-        
+    public void print() {
+        /* Algorithm:
         1. Store headNode in a temp variable
         2. Traverse temp node till temp.next is null
-        3. Print the values encountered temp.data value for every traversal 
-
-        */
+        3. Print the values encountered temp.data value for every traversal */
 
         Node temp = headNode;
 
@@ -40,6 +37,35 @@ public class SinglyLinkedList {
             System.out.print(temp.data + " ");
             temp = temp.next;
         }
+    }
+
+    public void append(int val) {
+        /* Adds a node to the tail
+        
+        Algorithm:
+        1. Store the head node in a temp variable
+        2. Create a new node for the data given
+        3. Check if head node is null, if yes just make the head node the new node, return
+        4. Otherwise iterate till temp variable is the last node
+        5. Set the next node for the temp variable as the new node */
+
+        Node temp = headNode;
+        Node newNode = new Node(val);
+
+        if (headNode == null) {
+            headNode = newNode;
+            return;
+        }
+
+        while(temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        return;
+    }
+
+    public void addAfter(Node previous, int val) {
     }
 
     public static void main(String[] args) {
